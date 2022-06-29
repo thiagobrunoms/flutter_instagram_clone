@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/widgets/instagram_logo_menu/instagram_logo_menu.dart';
+import 'package:instagram_clone/feed/presentation/widgets/appbar/instagram_logo_menu/instagram_logo_menu.dart';
 
 class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FeedAppBar({Key? key}) : super(key: key);

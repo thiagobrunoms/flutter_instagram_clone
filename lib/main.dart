@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/feed_page.dart';
+import 'package:instagram_clone/feed/presentation/feed_page.dart';
 
 void main() {
   runApp(const MyApp());
