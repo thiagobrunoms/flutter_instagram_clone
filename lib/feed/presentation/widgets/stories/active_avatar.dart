@@ -3,16 +3,24 @@ import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avata
 import 'package:flutter/material.dart';
 
 class ActiveAvatar extends AbstractAvatar {
+  ActiveAvatar.large() {
+    size = 37;
+  }
+
+  ActiveAvatar.small() {
+    size = 18;
+  }
+
   @override
   Widget build() {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(1.5),
       child: CircleAvatar(
         backgroundColor: Colors.black,
-        radius: 37,
+        radius: size,
         child: CircleAvatar(
           backgroundImage: AssetImage('assets/perfil-instagram.png'),
-          radius: 32,
+          radius: size! - 3,
         ),
       ),
     );

@@ -6,6 +6,6 @@ class ActiveStyleNickname extends AbstractNickname {
 
   @override
   TextStyle buildTextStyle() {
-    return const TextStyle(color: Colors.white);
+    return const TextStyle(color: Colors.white, fontSize: 14);
   }
 }

@@ -29,7 +29,7 @@ class _StoriesAvatarListWidgetState extends State<StoriesAvatarListWidget> {
 
         List<Widget> avatars = stories
             .map((eachStory) => StoryWidget(
-                avatar: ActiveAvatar(),
+                avatar: ActiveAvatar.large(),
                 nickname: ActiveStyleNickname('thiagodesales')))
             .toList();
 
@@ -39,20 +39,23 @@ class _StoriesAvatarListWidgetState extends State<StoriesAvatarListWidget> {
   }
 
   Widget _buildList(List<Widget> avatars) {
-    return SizedBox(
-      height: 110,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        padding: const EdgeInsets.only(left: 10),
-        separatorBuilder: (_, index) {
-          return const SizedBox(
-            width: 10,
-          );
-        },
-        itemBuilder: (_, index) {
-          return avatars[index];
-        },
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      child: SizedBox(
+        height: 110,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: avatars.length,
+          padding: const EdgeInsets.only(left: 10),
+          separatorBuilder: (_, index) {
+            return const SizedBox(
+              width: 10,
+            );
+          },
+          itemBuilder: (_, index) {
+            return avatars[index];
+          },
+        ),
       ),
     );
   }

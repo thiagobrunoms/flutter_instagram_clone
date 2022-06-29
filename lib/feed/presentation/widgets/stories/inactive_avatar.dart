@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avatar.dart';
 
 class InactiveAvatar extends AbstractAvatar {
+  InactiveAvatar.large() {
+    size = 35;
+  }
+
+  InactiveAvatar.small() {
+    size = 30;
+  }
+
   @override
   Widget build() {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(4.0),
       child: CircleAvatar(
-        backgroundImage: AssetImage('assets/perfil-instagram.png'),
-        radius: 35,
+        backgroundImage: const AssetImage('assets/perfil-instagram.png'),
+        radius: size,
       ),
     );
   }
