@@ -3,17 +3,17 @@ import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avata
 
 class InactiveAvatar extends AbstractAvatar {
   InactiveAvatar.large() {
-    size = 35;
+    size = 33;
   }
 
   InactiveAvatar.small() {
-    size = 30;
+    size = 27;
   }
 
   @override
   Widget build() {
     return Padding(
-      padding: EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(1.5),
       child: CircleAvatar(
         backgroundImage: const AssetImage('assets/perfil-instagram.png'),
         radius: size,

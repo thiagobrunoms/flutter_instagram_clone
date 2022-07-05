@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/widgets/appbar/feed_appbar.dart';
 import 'package:instagram_clone/feed/presentation/widgets/post/post_widget.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avatar.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/stories_avatar_list_widget.dart';
 
 class FeedPage extends StatefulWidget {
@@ -25,6 +24,7 @@ class _FeedPageState extends State<FeedPage> {
         child: Column(
           children: const [
             StoriesAvatarListWidget(),
+            PostWidget(),
             PostWidget(),
           ],
         ),

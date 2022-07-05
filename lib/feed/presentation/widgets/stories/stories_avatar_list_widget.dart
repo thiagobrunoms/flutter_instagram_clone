@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/story_entity.dart';
 import 'package:instagram_clone/feed/presentation/widgets/nicknames/active_style.dart';
+import 'package:instagram_clone/feed/presentation/widgets/nicknames/inactive_style.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/active_avatar.dart';
+import 'package:instagram_clone/feed/presentation/widgets/stories/inactive_avatar.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/stories_controller.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/story_widget.dart';
 
@@ -27,22 +29,29 @@ class _StoriesAvatarListWidgetState extends State<StoriesAvatarListWidget> {
 
         List<StoryEntity> stories = snapshot.data!;
 
-        List<Widget> avatars = stories
-            .map((eachStory) => StoryWidget(
-                avatar: ActiveAvatar.large(),
-                nickname: ActiveStyleNickname('thiagodesales')))
-            .toList();
+        List<Widget> avatars = _buildAvatars(stories);
 
         return _buildList(avatars);
       },
     );
   }
 
+  List<Widget> _buildAvatars(List<StoryEntity> stories) {
+    return stories
+        .map((eachStory) => StoryWidget(
+            avatar:
+                eachStory.seen ? InactiveAvatar.large() : ActiveAvatar.large(),
+            nickname: eachStory.seen
+                ? InactiveStyleNickname(eachStory.name, 12)
+                : ActiveStyleNickname(eachStory.name, 12)))
+        .toList();
+  }
+
   Widget _buildList(List<Widget> avatars) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: SizedBox(
-        height: 110,
+        height: MediaQuery.of(context).size.height * 0.14,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: avatars.length,

@@ -1,25 +1,24 @@
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avatar.dart';
 import 'package:flutter/material.dart';
 
 class ActiveAvatar extends AbstractAvatar {
   ActiveAvatar.large() {
-    size = 37;
+    size = 34;
   }
 
   ActiveAvatar.small() {
-    size = 18;
+    size = 16;
   }
 
   @override
   Widget build() {
     return Padding(
-      padding: EdgeInsets.all(1.5),
+      padding: const EdgeInsets.all(1.5),
       child: CircleAvatar(
         backgroundColor: Colors.black,
         radius: size,
         child: CircleAvatar(
-          backgroundImage: AssetImage('assets/perfil-instagram.png'),
+          backgroundImage: const AssetImage('assets/perfil-instagram.png'),
           radius: size! - 3,
         ),
       ),
@@ -40,14 +39,6 @@ class ActiveAvatar extends AbstractAvatar {
           Colors.red,
         ],
       ),
-    );
-  }
-
-  @override
-  Widget buildName(String name) {
-    return Text(
-      name,
-      style: const TextStyle(color: Colors.white),
     );
   }
 }

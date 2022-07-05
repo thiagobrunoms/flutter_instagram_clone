@@ -9,25 +9,27 @@ class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return AppBar(
       backgroundColor: Theme.of(context).backgroundColor,
       leading: const InstagramLogoMenu(),
-      leadingWidth: 200,
+      leadingWidth: size.width * 0.40,
       actions: [
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.add_box_outlined),
-          iconSize: 30,
+          iconSize: size.height * 0.035,
         ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.favorite_border),
-          iconSize: 30,
+          iconSize: size.height * 0.035,
         ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.chat_bubble_outline),
-          iconSize: 30,
+          iconSize: size.height * 0.035,
         ),
       ],
     );

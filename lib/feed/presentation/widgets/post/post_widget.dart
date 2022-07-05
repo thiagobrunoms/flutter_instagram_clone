@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/widgets/nicknames/active_style.dart';
+import 'package:instagram_clone/feed/presentation/widgets/post/description/post_description.dart';
 import 'package:instagram_clone/feed/presentation/widgets/stories/active_avatar.dart';
 
 class PostWidget extends StatefulWidget {
@@ -10,18 +12,21 @@ class PostWidget extends StatefulWidget {
 }
 
 class _PostWidgetState extends State<PostWidget> {
+  bool seeMore = false;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 13.0),
-      child: Column(
-        children: [
-          _buildTopPost(),
-          _buildVerticalSpace(),
-          Image.asset('assets/post-test.png'),
-          _buildActions(),
-        ],
-      ),
+    print('rebuilding feed');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildTopPost(),
+        _buildVerticalSpace(),
+        Image.asset('assets/post-test.png'),
+        _buildActions(),
+        _buildLikes(),
+        const PostDescriptionWidget(),
+      ],
     );
   }
 
@@ -34,7 +39,7 @@ class _PostWidgetState extends State<PostWidget> {
             children: [
               ActiveAvatar.small().create(),
               _buildHorizontalSpace(),
-              ActiveStyleNickname('thiagodesales').create(),
+              ActiveStyleNickname('thiago.desales', 14).create(),
             ],
           ),
         ),
@@ -62,12 +67,10 @@ class _PostWidgetState extends State<PostWidget> {
                 icon: _buildIcon(Icons.favorite_border),
                 onPressed: () {},
               ),
-              _buildHorizontalSpace(),
               IconButton(
                 icon: _buildIcon(Icons.mode_comment_outlined),
                 onPressed: () {},
               ),
-              _buildHorizontalSpace(),
               IconButton(
                 icon: _buildIcon(Icons.send),
                 onPressed: () {},
@@ -91,14 +94,21 @@ class _PostWidgetState extends State<PostWidget> {
   Widget _buildIcon(IconData iconData) => Icon(
         iconData,
         color: Colors.white,
-        size: 32,
+        size: MediaQuery.of(context).size.height * 0.035,
       );
 
-  Widget _buildHorizontalSpace() => const SizedBox(
-        width: 10,
+  Widget _buildHorizontalSpace() => SizedBox(
+        width: MediaQuery.of(context).size.width * 0.03,
       );
 
   Widget _buildVerticalSpace() => const SizedBox(
         height: 10,
       );
+
+  Widget _buildLikes() {
+    return const Text(
+      '2.150 curtidas',
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+    );
+  }
 }
