@@ -1,5 +1,5 @@
-import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/abstract_avatar.dart';
 
 class ActiveAvatar extends AbstractAvatar {
   ActiveAvatar.large() {

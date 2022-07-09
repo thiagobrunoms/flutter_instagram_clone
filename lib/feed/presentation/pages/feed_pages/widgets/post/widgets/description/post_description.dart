@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/active_style.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/active_style.dart';
 
 class PostDescriptionWidget extends StatefulWidget {
   const PostDescriptionWidget({Key? key}) : super(key: key);

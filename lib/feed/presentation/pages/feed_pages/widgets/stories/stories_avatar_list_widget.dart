@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/story_entity.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/active_style.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/inactive_style.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/active_avatar.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/inactive_avatar.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/stories_controller.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/story_widget.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/active_style.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/inactive_style.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/active_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/inactive_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/stories_controller.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/story_widget.dart';
 
 class StoriesAvatarListWidget extends StatefulWidget {
   const StoriesAvatarListWidget({Key? key}) : super(key: key);

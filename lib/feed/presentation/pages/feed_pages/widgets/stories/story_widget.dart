@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/domain/story_entity.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/nickname_widget.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/abstract_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/nickname_widget.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/abstract_avatar.dart';
 
 class StoryWidget extends StatelessWidget {
   final AbstractNickname nickname;

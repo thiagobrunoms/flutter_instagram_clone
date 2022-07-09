@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/nickname_widget.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/nickname_widget.dart';
 
 class InactiveStyleNickname extends AbstractNickname {
   InactiveStyleNickname(String nickname, double size)

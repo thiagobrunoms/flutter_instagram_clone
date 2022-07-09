@@ -1,9 +1,6 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/feed/presentation/widgets/nicknames/active_style.dart';
-import 'package:instagram_clone/feed/presentation/widgets/stories/active_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/active_style.dart';
+import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/active_avatar.dart';
 
 class TopPostWidget extends StatefulWidget {
   const TopPostWidget({Key? key}) : super(key: key);
