@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:instagram_clone/feed/presentation/widgets/appbar/instagram_logo_menu/instagram_logo_menu.dart';
 
 class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -14,22 +15,23 @@ class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Theme.of(context).backgroundColor,
       leading: const InstagramLogoMenu(),
-      leadingWidth: size.width * 0.40,
+      leadingWidth: size.width * 0.35,
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.add_box_outlined),
-          iconSize: size.height * 0.035,
+          // icon: const Icon(Icons.add_box_outlined),
+          icon: const FaIcon(FontAwesomeIcons.squarePlus),
+          iconSize: size.height * 0.03,
         ),
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.favorite_border),
-          iconSize: size.height * 0.035,
+          icon: const Icon(FontAwesomeIcons.heart),
+          iconSize: size.height * 0.03,
         ),
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.chat_bubble_outline),
-          iconSize: size.height * 0.035,
+          icon: const Icon(FontAwesomeIcons.comment),
+          iconSize: size.height * 0.03,
         ),
       ],
     );
