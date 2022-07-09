@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/post/widgets/actions/post_actions_widget.dart';
 
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/post/widgets/comments/post_comments_title_widget.dart';
@@ -9,7 +10,8 @@ import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/post/
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/post/widgets/top_post/top_post_widget.dart';
 
 class PostWidget extends StatefulWidget {
-  const PostWidget({Key? key}) : super(key: key);
+  final PostEntity post;
+  const PostWidget({Key? key, required this.post}) : super(key: key);
 
   @override
   State<PostWidget> createState() => _PostWidgetState();
@@ -23,14 +25,16 @@ class _PostWidgetState extends State<PostWidget> {
     print('rebuilding feed');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        TopPostWidget(),
-        PostContentWidget(),
-        PostActionsWidget(),
-        PostLikesWidget(),
-        PostDescriptionWidget(),
-        CommentsTitleWidget(),
-        PostTimeoutWidget()
+      children: [
+        TopPostWidget(post: widget.post),
+        PostContentWidget(
+          post: widget.post,
+        ),
+        const PostActionsWidget(),
+        const PostLikesWidget(),
+        const PostDescriptionWidget(),
+        const CommentsTitleWidget(),
+        const PostTimeoutWidget()
       ],
     );
   }

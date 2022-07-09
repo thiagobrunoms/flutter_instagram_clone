@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/abstract_avatar.dart';
+import 'package:instagram_clone/shared/domain/user_entity.dart';
 
 class InactiveAvatar extends AbstractAvatar {
-  InactiveAvatar.large() {
-    size = 33;
-  }
-
-  InactiveAvatar.small() {
-    size = 27;
-  }
+  InactiveAvatar({required UserEntity user, required double size})
+      : super(user: user, size: size);
 
   @override
   Widget build() {

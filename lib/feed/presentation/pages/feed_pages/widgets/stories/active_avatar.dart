@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/abstract_avatar.dart';
+import 'package:instagram_clone/shared/domain/user_entity.dart';
 
 class ActiveAvatar extends AbstractAvatar {
-  ActiveAvatar.large() {
-    size = 34;
-  }
-
-  ActiveAvatar.small() {
-    size = 16;
-  }
+  ActiveAvatar({required double size, required UserEntity user})
+      : super(size: size, user: user);
 
   @override
   Widget build() {
@@ -19,7 +15,7 @@ class ActiveAvatar extends AbstractAvatar {
         radius: size,
         child: CircleAvatar(
           backgroundImage: const AssetImage('assets/perfil-instagram.png'),
-          radius: size! - 3,
+          radius: size - 3,
         ),
       ),
     );

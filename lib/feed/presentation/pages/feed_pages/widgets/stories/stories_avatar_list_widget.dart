@@ -39,11 +39,12 @@ class _StoriesAvatarListWidgetState extends State<StoriesAvatarListWidget> {
   List<Widget> _buildAvatars(List<StoryEntity> stories) {
     return stories
         .map((eachStory) => StoryWidget(
-            avatar:
-                eachStory.seen ? InactiveAvatar.large() : ActiveAvatar.large(),
+            avatar: eachStory.seen
+                ? InactiveAvatar(user: eachStory.user, size: 34)
+                : ActiveAvatar(user: eachStory.user, size: 34),
             nickname: eachStory.seen
-                ? InactiveStyleNickname(eachStory.name, 12)
-                : ActiveStyleNickname(eachStory.name, 12)))
+                ? InactiveStyleNickname(eachStory.user.name, 12)
+                : ActiveStyleNickname(eachStory.user.name, 12)))
         .toList();
   }
 
