@@ -6,29 +6,47 @@ class FeedController {
     UserEntity userEntity = UserEntity(
         name: 'thiago.desales',
         profilePicture: 'assets/perfil-instagram.png',
+        hasActiveStories: false);
+
+    UserEntity userEntity2 = UserEntity(
+        name: 'thiago.desales',
+        profilePicture: 'assets/perfil-instagram.png',
         hasActiveStories: true);
+
+    String postDescription =
+        'Pensamentos da madrugada. Essa é uma decrição de uma foto para testes. Testando o conteúdo que aparecerá como descrição da postagem.';
 
     return [
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity2,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity2,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity2,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
       PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
-      PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
-      PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
-      PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
-      PostEntity(
-          user: userEntity, comments: [], postContent: 'assets/post-test.png'),
+          user: userEntity2,
+          comments: [],
+          postContent: 'assets/post-test.png',
+          description: postDescription),
     ];
   }
 }

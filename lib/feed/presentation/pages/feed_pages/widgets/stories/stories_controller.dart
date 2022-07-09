@@ -9,49 +9,49 @@ class StoriesController {
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
+          seen: true),
+      StoryEntity(
+          user: UserEntity(
+            name: 'thiagodesales',
+            profilePicture: 'assets/perfil-instagram.png',
+          ),
           seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
+          seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
+          seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
+          seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
+          seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
+          seen: false),
       StoryEntity(
           user: UserEntity(
             name: 'thiagodesales',
             profilePicture: 'assets/perfil-instagram.png',
           ),
-          seen: true),
-      StoryEntity(
-          user: UserEntity(
-            name: 'thiagodesales',
-            profilePicture: 'assets/perfil-instagram.png',
-          ),
-          seen: true),
+          seen: false),
     ];
   }
 }

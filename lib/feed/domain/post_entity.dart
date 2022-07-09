@@ -3,9 +3,13 @@ import 'package:instagram_clone/shared/domain/user_entity.dart';
 
 class PostEntity {
   UserEntity user;
+  String description;
   String postContent; //must be a ValueObject
   List<PostCommentEntity> comments;
 
   PostEntity(
-      {required this.user, required this.comments, required this.postContent});
+      {required this.user,
+      required this.description,
+      required this.comments,
+      required this.postContent});
 }

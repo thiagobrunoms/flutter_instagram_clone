@@ -22,7 +22,6 @@ class _PostWidgetState extends State<PostWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('rebuilding feed');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,8 +31,12 @@ class _PostWidgetState extends State<PostWidget> {
         ),
         const PostActionsWidget(),
         const PostLikesWidget(),
-        const PostDescriptionWidget(),
-        const CommentsTitleWidget(),
+        PostDescriptionWidget(
+          post: widget.post,
+        ),
+        CommentsTitleWidget(
+          post: widget.post,
+        ),
         const PostTimeoutWidget()
       ],
     );

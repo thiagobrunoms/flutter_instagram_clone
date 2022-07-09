@@ -27,7 +27,7 @@ class _FeedPageState extends State<FeedPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const StoriesAvatarListWidget(),
+            loadStories(),
             loadPosts(),
           ],
         ),

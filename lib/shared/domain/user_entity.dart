@@ -6,5 +6,5 @@ class UserEntity {
   UserEntity(
       {required this.name,
       required this.profilePicture,
-      this.hasActiveStories = false});
+      this.hasActiveStories = true});
 }
