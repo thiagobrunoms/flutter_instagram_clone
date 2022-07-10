@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/active_avatar.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/inactive_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/username_and_description_widget.dart';
 
 abstract class AbstractPostCommentsWidget {
   PostEntity post;
@@ -25,7 +26,12 @@ abstract class AbstractPostCommentsWidget {
             flex: 5,
             child: Padding(
               padding: const EdgeInsets.only(left: 6.0, right: 6.0),
-              child: build(),
+              child: Column(
+                children: [
+                  UsernameAndDescriptionWidget(post: post),
+                  buildTimeAndActions()
+                ],
+              ),
             ),
           ),
           Flexible(
@@ -44,5 +50,5 @@ abstract class AbstractPostCommentsWidget {
     );
   }
 
-  Widget build();
+  Widget buildTimeAndActions();
 }

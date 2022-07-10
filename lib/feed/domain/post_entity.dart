@@ -6,10 +6,14 @@ class PostEntity {
   String description;
   String postContent; //must be a ValueObject
   List<PostCommentEntity> comments;
+  DateTime date; //must be a ValueObject
+  bool modified;
 
   PostEntity(
       {required this.user,
       required this.description,
       required this.comments,
-      required this.postContent});
+      required this.postContent,
+      required this.date,
+      this.modified = false});
 }

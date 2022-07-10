@@ -16,37 +16,50 @@ class FeedController {
     String postDescription =
         'Pensamentos da madrugada. Essa é uma decrição de uma foto para testes. Testando o conteúdo que aparecerá como descrição da postagem.';
 
+    DateTime dateTime = DateTime.now().subtract(const Duration(days: 2));
+
     return [
       PostEntity(
           user: userEntity2,
           comments: [],
           postContent: 'assets/post-test.png',
-          description: postDescription),
+          description: postDescription,
+          date: dateTime),
       PostEntity(
-          user: userEntity,
-          comments: [],
-          postContent: 'assets/post-test.png',
-          description: postDescription),
+        user: userEntity,
+        comments: [],
+        postContent: 'assets/post-test.png',
+        description: postDescription,
+        date: dateTime,
+      ),
       PostEntity(
-          user: userEntity2,
-          comments: [],
-          postContent: 'assets/post-test.png',
-          description: postDescription),
+        user: userEntity2,
+        comments: [],
+        postContent: 'assets/post-test.png',
+        description: postDescription,
+        date: dateTime,
+      ),
       PostEntity(
-          user: userEntity2,
-          comments: [],
-          postContent: 'assets/post-test.png',
-          description: postDescription),
+        user: userEntity2,
+        comments: [],
+        postContent: 'assets/post-test.png',
+        description: postDescription,
+        date: dateTime,
+      ),
       PostEntity(
-          user: userEntity,
-          comments: [],
-          postContent: 'assets/post-test.png',
-          description: postDescription),
+        user: userEntity,
+        comments: [],
+        postContent: 'assets/post-test.png',
+        description: postDescription,
+        date: dateTime,
+      ),
       PostEntity(
-          user: userEntity2,
-          comments: [],
-          postContent: 'assets/post-test.png',
-          description: postDescription),
+        user: userEntity2,
+        comments: [],
+        postContent: 'assets/post-test.png',
+        description: postDescription,
+        date: dateTime,
+      ),
     ];
   }
 }
