@@ -27,6 +27,7 @@ abstract class AbstractPostCommentsWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 6.0, right: 6.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   UsernameAndDescriptionWidget(post: post),
                   buildTimeAndActions()

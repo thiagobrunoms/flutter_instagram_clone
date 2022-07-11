@@ -37,7 +37,7 @@ class _PostWidgetState extends State<PostWidget> {
         CommentsTitleWidget(
           post: widget.post,
         ),
-        const PostTimeoutWidget()
+        PostTimeoutWidget(post: widget.post)
       ],
     );
   }

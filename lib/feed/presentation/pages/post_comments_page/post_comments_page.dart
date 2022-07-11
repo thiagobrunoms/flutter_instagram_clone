@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/app_bar/post_comments_app_bar_widget.dart';
+import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/post_comments_widget.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/post_description_widget.dart';
 
 class PostCommentsPage extends StatefulWidget {
@@ -24,9 +25,17 @@ class _PostCommentsPageState extends State<PostCommentsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PostCommentsAppBarWidget(),
-      body: PostDescriptionCommentsWidget(
-        post: post,
-      ).create(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            PostDescriptionCommentsWidget(
+              post: post,
+            ).create(),
+            ...post.comments.map((eachPostComment) =>
+                PostCommentsWidget(post: eachPostComment).create())
+          ],
+        ),
+      ),
     );
   }
 }

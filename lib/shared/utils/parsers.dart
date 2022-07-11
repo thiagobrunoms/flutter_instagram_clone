@@ -8,7 +8,7 @@ class DateTimeParsers {
     if (inDays <= 1) {
       int inMinutes = duration.inMinutes;
       if (duration.inMinutes < 60) {
-        return 'Há $inMinutes ${inMinutes > 1 ? 'minutos' : 'minuto'}';
+        return 'há $inMinutes ${inMinutes > 1 ? 'minutos' : 'minuto'}';
       }
 
       int inHours = duration.inHours;

@@ -17,6 +17,6 @@ class _PostContentWidgetState extends State<PostContentWidget> {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Image.asset(widget.post.postContent));
+        child: Image.asset(widget.post.postContent!));
   }
 }

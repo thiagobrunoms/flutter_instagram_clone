@@ -21,10 +21,19 @@ class FeedController {
     return [
       PostEntity(
           user: userEntity2,
-          comments: [],
+          comments: [
+            PostEntity(
+                user: userEntity,
+                description: 'Comentário 1',
+                comments: [],
+                numberOfLikes: 23,
+                date: DateTime.now())
+          ],
           postContent: 'assets/post-test.png',
           description: postDescription,
-          date: dateTime),
+          date: dateTime,
+          numberOfLikes: 10,
+          modified: true),
       PostEntity(
         user: userEntity,
         comments: [],
@@ -38,6 +47,7 @@ class FeedController {
         postContent: 'assets/post-test.png',
         description: postDescription,
         date: dateTime,
+        numberOfLikes: 6,
       ),
       PostEntity(
         user: userEntity2,
@@ -45,6 +55,7 @@ class FeedController {
         postContent: 'assets/post-test.png',
         description: postDescription,
         date: dateTime,
+        numberOfLikes: 17,
       ),
       PostEntity(
         user: userEntity,
