@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/app_bar/post_comments_app_bar_widget.dart';
+import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/comments_responses/comments_responses_widget.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/post_comments_widget.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/post_description_widget.dart';
 
@@ -31,28 +32,16 @@ class _PostCommentsPageState extends State<PostCommentsPage> {
             PostDescriptionCommentsWidget(
               post: post,
             ).create(),
-            ...post.comments
-                .map((eachPostComment) => buildCommentWidget(eachPostComment)),
+            ...post.comments.map((eachPostComment) =>
+                CommentsResponsesWidget(post: eachPostComment)),
           ],
         ),
       ),
     );
   }
-
-  Widget buildCommentWidget(PostEntity post) {
-    return Column(
-      children: [
-        PostCommentsWidget(post: post).create(),
-        ...post.comments.map((e) => Align(
-              alignment: Alignment.topRight,
-              child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.85,
-                  child: PostCommentsWidget(post: e).create()),
-            )),
-      ],
-    );
-  }
 }
+
+
 
 // ...post.comments.map((eachPost) => Align(
 //               alignment: Alignment.topRight,
