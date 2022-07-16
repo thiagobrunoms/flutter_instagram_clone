@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/active_avatar.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/stories/inactive_avatar.dart';
+import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents-composite/abstract_post_comments.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/widgets/contents/username_and_description_widget.dart';
 
-abstract class AbstractPostCommentsWidget {
-  PostEntity post;
+class PostCommentWidget implements AbstractPostComments {
+  final PostEntity post;
 
-  AbstractPostCommentsWidget({required this.post});
+  PostCommentWidget({required this.post});
 
-  Widget create() {
+  @override
+  Widget buildContent(Widget actions) {
     return Padding(
       padding: const EdgeInsets.all(6.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(
@@ -30,7 +32,7 @@ abstract class AbstractPostCommentsWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   UsernameAndDescriptionWidget(post: post),
-                  buildTimeAndActions()
+                  actions,
                 ],
               ),
             ),
@@ -50,6 +52,4 @@ abstract class AbstractPostCommentsWidget {
       ),
     );
   }
-
-  Widget buildTimeAndActions();
 }

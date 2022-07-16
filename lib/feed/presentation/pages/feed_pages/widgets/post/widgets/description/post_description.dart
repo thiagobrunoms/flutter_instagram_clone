@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/domain/post_entity.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/widgets/nicknames/active_style.dart';
@@ -13,42 +12,51 @@ class PostDescriptionWidget extends StatefulWidget {
 
 class _PostDescriptionWidgetState extends State<PostDescriptionWidget> {
   bool _seeMore = false;
-
+  TextStyle mystyle = const TextStyle(color: Colors.white, fontSize: 12);
   @override
   Widget build(BuildContext context) {
-    print('rebuilding post desc');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RichText(
-          overflow: TextOverflow.ellipsis,
+          overflow: !_seeMore ? TextOverflow.ellipsis : TextOverflow.clip,
+          maxLines: !_seeMore ? 2 : null,
           text: TextSpan(
             text: 'thiago.desales',
             children: [
               TextSpan(
                 text: ' ${widget.post.description}',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white, fontSize: 12),
               ),
-              TextSpan(
-                  text: ' mais',
-                  style: const TextStyle(color: Colors.grey),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      setState(() {
-                        _seeMore = !_seeMore;
-                      });
-                    }),
             ],
             style: ActiveStyleNickname('thiago.desales', 14).buildTextStyle(),
           ),
         ),
-        _seeMore
-            ? Text(
-                widget.post.description,
-                style: const TextStyle(color: Colors.white),
-              )
+        hasOverflow(widget.post.description, mystyle)
+            ? _seeMore
+                ? Container()
+                : InkWell(
+                    child: const Text(
+                      'mais',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        _seeMore = !_seeMore;
+                      });
+                    },
+                  )
             : Container()
       ],
     );
+  }
+
+  bool hasOverflow(String text, TextStyle style) {
+    final TextPainter textPainter = TextPainter(
+      text: TextSpan(text: text, style: style),
+      textDirection: TextDirection.ltr,
+      textScaleFactor: WidgetsBinding.instance.window.textScaleFactor,
+    )..layout();
+    return textPainter.size.width > MediaQuery.of(context).size.width;
   }
 }

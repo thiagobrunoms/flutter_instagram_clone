@@ -31,11 +31,31 @@ class _PostCommentsPageState extends State<PostCommentsPage> {
             PostDescriptionCommentsWidget(
               post: post,
             ).create(),
-            ...post.comments.map((eachPostComment) =>
-                PostCommentsWidget(post: eachPostComment).create())
+            ...post.comments
+                .map((eachPostComment) => buildCommentWidget(eachPostComment)),
           ],
         ),
       ),
     );
   }
+
+  Widget buildCommentWidget(PostEntity post) {
+    return Column(
+      children: [
+        PostCommentsWidget(post: post).create(),
+        ...post.comments.map((e) => Align(
+              alignment: Alignment.topRight,
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.85,
+                  child: PostCommentsWidget(post: e).create()),
+            )),
+      ],
+    );
+  }
 }
+
+// ...post.comments.map((eachPost) => Align(
+//               alignment: Alignment.topRight,
+//               child: PostCommentWidget(post: eachPost).buildContent(
+//                   PostCommentResponseActionsWidget(post: eachPost)),
+//             ),)
