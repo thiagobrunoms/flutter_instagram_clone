@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/feed/presentation/pages/feed_pages/feed_page.dart';
+import 'package:instagram_clone/feed/presentation/pages/post_comments_page/post_comments_page%20copy.dart';
 import 'package:instagram_clone/feed/presentation/pages/post_comments_page/post_comments_page.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const FeedPage(),
       routes: {
-        'toPostComments': (context) => const PostCommentsPage(),
+        'toPostComments': (context) =>
+            const PostCommentsPage() // const PostCommentsPageCopy() //const PostCommentsPage(),
       },
     );
   }
